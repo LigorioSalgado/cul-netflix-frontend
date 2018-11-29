@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Input from '../Input/Input';
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
+import M from 'materialize-css';
+
 
 const SIGNUP = gql`
     mutation Register($first_name:String!,$last_name:String!,$email:String!,
@@ -28,6 +30,7 @@ class SignUp extends Component{
             passConfirm:""
 
         }
+
     }
 
     setInput = (e)=>{
@@ -50,7 +53,8 @@ class SignUp extends Component{
         if(password === passConfirm){
             signup({variables:{...this.state}})
         }else{
-            alert("Password does not match")
+            M.toast({html: 'Passwords not match'})
+
         }
 
     }
@@ -108,8 +112,9 @@ class SignUp extends Component{
             <Mutation  mutation={SIGNUP}>
             {
                 (signup,{data,error}) => {
+                
                     if (data) this.catchData(data)
-                    if(error)(alert(error.message))
+                    if(error)(console.log(error.graphQLErrors))
                    return (
                     <div className="container Signup">
                         <div className="row">
