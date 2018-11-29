@@ -5,3 +5,10 @@
     color:$primary-color-text;
 }
 
+ input[type=text]+ label, input[type=password] + label,
+ input[type=email ]+ label{
+    color:#fff !important;
+}
+
+
+

@@ -7,8 +7,8 @@ import {SignUp} from './components/SignUp';
 
 
 export default [
-    <Route exact path="/" component={Home} />,
-    <Route exact path="/signup" component={SignUp} />
+    <Route exact path="/" component={Home} key={1} />,
+    <Route exact path="/signup" component={SignUp} key={2} />
 
 
 ]
