@@ -1,5 +1,26 @@
 import React, { Component } from 'react';
 import {Input} from '../../common/Input';
+import {Mutation} from 'react-apollo';
+import gql from 'graphql-tag'
+
+
+const REGISTER =  gql`
+
+    mutation Register($first_name:String!,$last_name:String!,$email:String!,
+    $password:String!){
+        signup(data:{
+            first_name:$first_name,
+            last_name:$last_name,
+            email:$email,
+            password:$password
+        }){
+            token
+        }
+
+    }
+
+`;
+
 
 class SignUp extends Component{
 
@@ -21,10 +42,25 @@ class SignUp extends Component{
         )
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = (e,signup) => {
         e.preventDefault();
-        console.log(this.state)
+        if(this.state.password === this.state.confirmPass){
+            signup({variables:{...this.state}})
+        }
+        else{
+            alert("Password not match");
+        }
     }   
+
+    catchData = (data) => {
+        const {token} =  data.signup
+        localStorage.setItem("netflixToken",token)
+        this.props.history.push('/')
+    }
+
+    catchError = (error) => {
+        console.log(error)
+    }
 
     renderForm(){
         return(
@@ -84,9 +120,21 @@ class SignUp extends Component{
 
     render(){
         return(
-            <form onSubmit={e => this.handleSubmit(e) }>
-                {this.renderForm()}
-            </form>
+        <Mutation  mutation={REGISTER} >
+            {
+                (signup,{data,error}) => {
+                    if(data) this.catchData(data)
+                    if(error) this.catchError(error)
+                    return(
+                        <form onSubmit={e => this.handleSubmit(e,signup) }>
+                            {this.renderForm()}
+                        </form>
+                    )
+                }
+
+            }
+           
+        </Mutation>
         )
     }
 
