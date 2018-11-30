@@ -8,7 +8,7 @@ import {Login} from './components/Login';
 
 const Logout = () => {
     localStorage.removeItem("netflixToken")
-    return <Redirect path="/" />
+    return <Redirect to="/login" />
 }
 
 

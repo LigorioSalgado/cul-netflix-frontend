@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import payload from '../../payload';
+import isAuthenticated from '../../isAuthenticated';
 
 
 //const isAuthenticated = localStorage.getItem("netflixToken") !==  null
@@ -15,20 +16,21 @@ class Navbar extends Component{
 
 
     authenticatedRender = () => {
-        if(this.state.authenticated){
+        if(isAuthenticated()){
             return(
-                <React.Fragment>
+                <ul className="right hide-on-med-and-down">
+
                             <li><a href="/me">Hola {payload().email}</a></li>
                             <li><a href="/movies">Peliculas</a></li>
                             <li><a href="/logout">Log out</a></li>
-                </React.Fragment>
+                </ul>
             )
         }else{
             return(
-                <React.Fragment>
+            <ul className="right hide-on-med-and-down">
                 <li><a href="/login">Login</a></li>
                 <li><a href="/signup">Sign Up</a></li>
-                </React.Fragment>
+               </ul>
             )
         }
     }
@@ -38,12 +40,11 @@ class Navbar extends Component{
             <nav>
                 <div className="nav-wrapper bg-main">
                     <a href="#" className="brand-logo">My Netflix</a>
-                    <ul className="right hide-on-med-and-down">
+                    
                     {  
                         this.authenticatedRender()
                     }
                         
-                    </ul>
                 </div>
             </nav>
 
