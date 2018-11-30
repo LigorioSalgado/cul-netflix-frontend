@@ -13,9 +13,7 @@ class Input extends Component{
 
 
     componentDidUpdate(prevProps){
-        console.log("PrevProps ----->",prevProps.value)
-        console.log("this.props",this.props.value)
-        if(prevProps.value !== this.props.value ){
+    if(prevProps.value !== this.props.value ){
             this.setState({
                 value:this.props.value
             })
