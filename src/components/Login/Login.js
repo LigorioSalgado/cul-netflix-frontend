@@ -56,10 +56,9 @@ class Login extends Component{
         return(
             <Mutation mutation={LOGIN}>
                 {
-                    (login,{data,error}) => {
+                    (login,{data,error,loading}) => {
                         if(data) this.catchData(data)
                         if(error) this.catchError(error)
-
                         return(
                         <form onSubmit={e => this.handleForm(e,login)} >
                             <div className="container">

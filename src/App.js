@@ -11,11 +11,11 @@ class App extends Component {
     return (
       <ApolloProvider  client={client}>
         <div className="App">
-          <Navbar/>
           <Router>
-            <Switch>
+            <React.Fragment>
+              <Navbar/>
               {routes}
-            </Switch>
+            </React.Fragment>
           </Router>
         </div>
       </ApolloProvider>
