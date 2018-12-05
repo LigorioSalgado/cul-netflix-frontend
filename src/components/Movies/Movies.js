@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import gql from 'graphql-tag';
 import {Query}  from 'react-apollo';
+import MovieCard from './MovieCard';
 import './movies.scss';
 
 const ALLMOVIES = gql`
@@ -31,7 +32,10 @@ export default class Movies extends Component {
                                 if(loading) return <h4>Cargando ...</h4>
                                 const movies = data.movies.map((movie,index) => (
                                     <div className="col s4" key={index}>
-                                        <h4>{movie.name}</h4>
+                                       <MovieCard image={movie.cover} 
+                                       title={movie.name}
+                                       rating={movie.rating}
+                                       />
                                     </div>
 
                                 ))   
