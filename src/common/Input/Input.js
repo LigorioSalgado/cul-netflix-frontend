@@ -27,7 +27,7 @@ class Input extends Component{
     render() {
         return(
             <React.Fragment>
-                <input style={{color:"#fff"}} id={this.props.id} type={this.props.type}  
+                <input  id={this.props.id} type={this.props.type}  
                     className="validate"
                     value={this.state.value}
                     required={this.props.required}
