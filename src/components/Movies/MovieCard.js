@@ -8,7 +8,9 @@ export default class MovieCard extends Component {
     return (
         <div className="card">
             <div className="card-image waves-effect waves-block waves-light">
-                <img className="activator" src={this.props.image} alt="movie photo"/>
+                <a href={`/movie/${this.props.id}`}>
+                    <img className="activator" src={this.props.image} alt="movie photo"/>
+                </a>
             </div>
             <div className="card-content">
                 <span className="card-title activator grey-text text-darken-4">

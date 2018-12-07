@@ -4,7 +4,7 @@ import {Route,Redirect} from 'react-router-dom'
 import {Home} from './components/Home';
 import {SignUp} from './components/SignUp';
 import {Login} from './components/Login';
-import {Movies,MovieForm} from './components/Movies';
+import {Movies,MovieForm,MovieDetail} from './components/Movies';
 
 
 const Logout = () => {
@@ -20,6 +20,8 @@ export default [
     <Route exact path="/logout" component={Logout} key={4}/>,
     <Route exact path="/movies" component={Movies} key={5}/>,
     <Route exact path="/movies/add" component={MovieForm} key={6}/>,
+    <Route exact path="/movie/:id" component={MovieDetail} key={7}/>,
+
 
 
 ]

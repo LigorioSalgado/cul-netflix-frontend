@@ -32,7 +32,9 @@ export default class Movies extends Component {
                                 if(loading) return <h4>Cargando ...</h4>
                                 const movies = data.movies.map((movie,index) => (
                                     <div className="col s4" key={index}>
-                                       <MovieCard image={movie.cover} 
+                                       <MovieCard 
+                                       id={movie._id}
+                                       image={movie.cover} 
                                        title={movie.name}
                                        rating={movie.rating}
                                        />
