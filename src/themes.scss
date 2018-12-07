@@ -6,7 +6,7 @@
 }
 
  input[type=text] + label, input[type=password] + label,
- input[type=email ] + label{
+ input[type=email ] + label,textarea +label{
     color:#fff !important;
 }
 

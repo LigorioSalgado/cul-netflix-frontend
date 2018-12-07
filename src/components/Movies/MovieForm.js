@@ -5,12 +5,13 @@ import firebaseConfig  from '../../firebaseConfig';
 
 
 
+
 export default class MovieForm extends Component {
  constructor(props){
     super(props)
     this.state = {
         name:"",
-        genre:"",
+        genre:"COMEDY",
         director:"",
         cast:[],
         sinopsis:"",
@@ -30,8 +31,12 @@ export default class MovieForm extends Component {
  }
 
 
- addCast = () => {
-    const newCast =  this.state.actor
+ addCast = (e) => {
+     e.preventDefault();
+    const newCast = {
+        name:this.state.actor.castName,
+        age:this.state.actor.age
+    }
     this.setState(
         {cast:[...this.state.cast,newCast],
          actor:{castName:"",age:""}
@@ -53,21 +58,25 @@ export default class MovieForm extends Component {
  CastInput = () => {
     return(
         <React.Fragment>
-            <ul>    
-                {this.state.cast.map((actor,index) =>(
-                    <li key={index}>{actor.name}</li>
-                ))
-            }
+            
+            <div className="col s10">
+                <ul>    
+                    {this.state.cast.map((actor,index) =>(
+                        <li key={index}>{actor.name}</li>
+                    ))
+                }
 
-            </ul>
-            <div className="col s6 input-field">
+                </ul>
+            </div>
+          
+            <div className="col s5 input-field">
                     <Input type="text" 
                         id="castName" name="Name" 
-                        value={this.state.actor.name}
+                        value={this.state.actor.castName}
                         setInput={this.handleCastInput}
                         required/>
             </div>
-            <div className="col s6 input-field">
+            <div className="col s5 input-field">
                     <Input type="text" 
                         id="age" name="Age" 
                         value={this.state.actor.age}
@@ -75,9 +84,11 @@ export default class MovieForm extends Component {
                         required/>
             </div>  
 
-            <button className="waves-effect waves-ligth btn btn-primary"
-            onClick={this.addCast}
-            >Agregar</button>
+            <div className="col s10">
+                <a href="" className="waves-effect waves-ligth btn btn-primary"
+                onClick={this.addCast}
+                >Agregar</a>
+            </div>
 
         </React.Fragment>
         
@@ -129,16 +140,18 @@ export default class MovieForm extends Component {
                         setInput={this.handleInput}
                         required/>
                 </div>
-                <div className="col s10 input-field">
-                    <select  id="genre" value={this.state.genre}  onChange={this.handleInput}>
+                <div className="col s10 ">
+                    <label htmlFor="genre">Genre</label>
+                    <select  id="genre" value={this.state.genre} className="browser-default" onChange={this.handleInput}>
                         <option value="COMEDY">Comedy</option>
                         <option value="ACTION">Action</option>
                         <option value="DRAMA">Drama</option>
                         <option value="SCIFY">Science Fiction</option>
                         <option value="HORROR">Horror</option>
                     </select>
-                    <label>Genre</label>
                 </div>
+
+              
                 <div className="col s10 input-field">
                     <Input type="text" 
                             id="director" name="Director" 
@@ -149,7 +162,7 @@ export default class MovieForm extends Component {
                 {this.CastInput()}
 
                 <div className="col s10 input-field">
-                    <textarea  id="sinopsis" cols="30" rows="10" value={this.state.sinopsis}
+                    <textarea  className="materialize-textarea" id="sinopsis" cols="30" rows="10" value={this.state.sinopsis}
                     onChange={this.handleInput}
                     ></textarea>
                     <label htmlFor="sinopsis">Sinopsis</label>
@@ -171,14 +184,14 @@ export default class MovieForm extends Component {
                             required/>
                 </div>
 
-                <div className="col s10 input-field">
-                    <select  id="rate" value={this.state.rate} onChange={this.handleInput}>
+                <div className="col s10">
+                    <label htmlFor="rate">Rate</label>
+                    <select  id="rate" value={this.state.rate}  className="browser-default" onChange={this.handleInput} >
                         <option value="A">Clasification A</option>
                         <option value="B">Clasification B</option>
                         <option value="C">Clasification C</option>
                         <option value="B15">Clasification B15</option>
                     </select>
-                    <label htmlFor="rate">Rate</label>
                 </div>
 
                 <div className="col s10 input-field">
@@ -203,7 +216,7 @@ export default class MovieForm extends Component {
                             hidden
                             accept="image/*"
                             randomizeFilename
-                            storage={
+                            storageRef={
                                 firebaseConfig.storage().ref('covers')
                             }
                             onUploadError={this.handleUploadError}
@@ -212,6 +225,8 @@ export default class MovieForm extends Component {
                         />
                     Agregar Cover
                     </label>
+                    <span>Progress: {this.state.progress}%</span>
+
                 </div>
             </div>
         </form>
