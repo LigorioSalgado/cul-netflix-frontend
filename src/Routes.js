@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Route,Redirect} from 'react-router-dom'
 
 import {Home} from './components/Home';
 import {SignUp} from './components/SignUp';
 import {Login} from './components/Login';
 import {Movies,MovieForm,MovieDetail} from './components/Movies';
-
+import {Me} from './components/Me';
+import isAuthenticated from './isAuthenticated';
 
 const Logout = () => {
     localStorage.removeItem("netflixToken")
@@ -13,15 +14,22 @@ const Logout = () => {
 }
 
 
+const  PrivateRoute = ({component:Component,...rest}) => (
+    <Route  {...rest} render = {
+        (props) => (
+              isAuthenticated() ? <Component {...props}/> : <Redirect to="/login"/>
+        )
+    }>
+    </Route>
+)
+
 export default [
     <Route exact path="/" component={Home} key={1} />,
     <Route exact path="/signup" component={SignUp} key={2} />,
     <Route exact path="/login" component={Login} key={3} />,
-    <Route exact path="/logout" component={Logout} key={4}/>,
-    <Route exact path="/movies" component={Movies} key={5}/>,
-    <Route exact path="/movies/add" component={MovieForm} key={6}/>,
-    <Route exact path="/movie/:id" component={MovieDetail} key={7}/>,
-
-
-
+    <PrivateRoute exact path="/logout" component={Logout} key={4}/>,
+    <PrivateRoute exact path="/movies" component={Movies} key={5}/>,
+    <PrivateRoute exact path="/movies/add" component={MovieForm} key={6}/>,
+    <PrivateRoute exact path="/movie/:id" component={MovieDetail} key={7}/>,
+    <PrivateRoute exact path="/me" component={Me} key={8} />
 ]
