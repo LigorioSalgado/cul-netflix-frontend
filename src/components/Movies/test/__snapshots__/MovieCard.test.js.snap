@@ -1,0 +1,507 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieCard/> Debe ejecutar render correctamente 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MovieCard />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="card-image waves-effect waves-block waves-light"
+        >
+          <a
+            href="/movie/undefined"
+          >
+            <img
+              alt="movie photo"
+              className="activator"
+            />
+          </a>
+        </div>,
+        <div
+          className="card-content"
+        >
+          <span
+            className="card-title activator grey-text text-darken-4"
+          />
+          <RatingAPILayer
+            direction="ltr"
+            emptySymbol={
+              Object {
+                "backgroundColor": "#ccc",
+                "border": "5px double white",
+                "borderRadius": "50%",
+                "display": "inline-block",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            fractions={1}
+            fullSymbol={
+              Object {
+                "backgroundColor": "black",
+                "border": "5px double white",
+                "borderRadius": "50%",
+                "display": "inline-block",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            onChange={[Function]}
+            onClick={[Function]}
+            onHover={[Function]}
+            placeholderSymbol={
+              Object {
+                "backgroundColor": "red",
+                "border": "5px double white",
+                "borderRadius": "50%",
+                "display": "inline-block",
+                "height": 30,
+                "width": 30,
+              }
+            }
+            quiet={false}
+            readonly={true}
+            start={0}
+            step={1}
+            stop={5}
+          />
+        </div>,
+      ],
+      "className": "card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <a
+            href="/movie/undefined"
+          >
+            <img
+              alt="movie photo"
+              className="activator"
+            />
+          </a>,
+          "className": "card-image waves-effect waves-block waves-light",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="movie photo"
+              className="activator"
+            />,
+            "href": "/movie/undefined",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "movie photo",
+              "className": "activator",
+              "src": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "a",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="card-title activator grey-text text-darken-4"
+            />,
+            <RatingAPILayer
+              direction="ltr"
+              emptySymbol={
+                Object {
+                  "backgroundColor": "#ccc",
+                  "border": "5px double white",
+                  "borderRadius": "50%",
+                  "display": "inline-block",
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+              fractions={1}
+              fullSymbol={
+                Object {
+                  "backgroundColor": "black",
+                  "border": "5px double white",
+                  "borderRadius": "50%",
+                  "display": "inline-block",
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+              onChange={[Function]}
+              onClick={[Function]}
+              onHover={[Function]}
+              placeholderSymbol={
+                Object {
+                  "backgroundColor": "red",
+                  "border": "5px double white",
+                  "borderRadius": "50%",
+                  "display": "inline-block",
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+              quiet={false}
+              readonly={true}
+              start={0}
+              step={1}
+              stop={5}
+            />,
+          ],
+          "className": "card-content",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "card-title activator grey-text text-darken-4",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "direction": "ltr",
+              "emptySymbol": Object {
+                "backgroundColor": "#ccc",
+                "border": "5px double white",
+                "borderRadius": "50%",
+                "display": "inline-block",
+                "height": 30,
+                "width": 30,
+              },
+              "fractions": 1,
+              "fullSymbol": Object {
+                "backgroundColor": "black",
+                "border": "5px double white",
+                "borderRadius": "50%",
+                "display": "inline-block",
+                "height": 30,
+                "width": 30,
+              },
+              "initialRating": undefined,
+              "onChange": [Function],
+              "onClick": [Function],
+              "onHover": [Function],
+              "placeholderSymbol": Object {
+                "backgroundColor": "red",
+                "border": "5px double white",
+                "borderRadius": "50%",
+                "display": "inline-block",
+                "height": 30,
+                "width": 30,
+              },
+              "quiet": false,
+              "readonly": true,
+              "start": 0,
+              "step": 1,
+              "stop": 5,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="card-image waves-effect waves-block waves-light"
+          >
+            <a
+              href="/movie/undefined"
+            >
+              <img
+                alt="movie photo"
+                className="activator"
+              />
+            </a>
+          </div>,
+          <div
+            className="card-content"
+          >
+            <span
+              className="card-title activator grey-text text-darken-4"
+            />
+            <RatingAPILayer
+              direction="ltr"
+              emptySymbol={
+                Object {
+                  "backgroundColor": "#ccc",
+                  "border": "5px double white",
+                  "borderRadius": "50%",
+                  "display": "inline-block",
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+              fractions={1}
+              fullSymbol={
+                Object {
+                  "backgroundColor": "black",
+                  "border": "5px double white",
+                  "borderRadius": "50%",
+                  "display": "inline-block",
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+              onChange={[Function]}
+              onClick={[Function]}
+              onHover={[Function]}
+              placeholderSymbol={
+                Object {
+                  "backgroundColor": "red",
+                  "border": "5px double white",
+                  "borderRadius": "50%",
+                  "display": "inline-block",
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+              quiet={false}
+              readonly={true}
+              start={0}
+              step={1}
+              stop={5}
+            />
+          </div>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <a
+              href="/movie/undefined"
+            >
+              <img
+                alt="movie photo"
+                className="activator"
+              />
+            </a>,
+            "className": "card-image waves-effect waves-block waves-light",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <img
+                alt="movie photo"
+                className="activator"
+              />,
+              "href": "/movie/undefined",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "movie photo",
+                "className": "activator",
+                "src": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": "a",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="card-title activator grey-text text-darken-4"
+              />,
+              <RatingAPILayer
+                direction="ltr"
+                emptySymbol={
+                  Object {
+                    "backgroundColor": "#ccc",
+                    "border": "5px double white",
+                    "borderRadius": "50%",
+                    "display": "inline-block",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                fractions={1}
+                fullSymbol={
+                  Object {
+                    "backgroundColor": "black",
+                    "border": "5px double white",
+                    "borderRadius": "50%",
+                    "display": "inline-block",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                onChange={[Function]}
+                onClick={[Function]}
+                onHover={[Function]}
+                placeholderSymbol={
+                  Object {
+                    "backgroundColor": "red",
+                    "border": "5px double white",
+                    "borderRadius": "50%",
+                    "display": "inline-block",
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+                quiet={false}
+                readonly={true}
+                start={0}
+                step={1}
+                stop={5}
+              />,
+            ],
+            "className": "card-content",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "card-title activator grey-text text-darken-4",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "direction": "ltr",
+                "emptySymbol": Object {
+                  "backgroundColor": "#ccc",
+                  "border": "5px double white",
+                  "borderRadius": "50%",
+                  "display": "inline-block",
+                  "height": 30,
+                  "width": 30,
+                },
+                "fractions": 1,
+                "fullSymbol": Object {
+                  "backgroundColor": "black",
+                  "border": "5px double white",
+                  "borderRadius": "50%",
+                  "display": "inline-block",
+                  "height": 30,
+                  "width": 30,
+                },
+                "initialRating": undefined,
+                "onChange": [Function],
+                "onClick": [Function],
+                "onHover": [Function],
+                "placeholderSymbol": Object {
+                  "backgroundColor": "red",
+                  "border": "5px double white",
+                  "borderRadius": "50%",
+                  "display": "inline-block",
+                  "height": 30,
+                  "width": 30,
+                },
+                "quiet": false,
+                "readonly": true,
+                "start": 0,
+                "step": 1,
+                "stop": 5,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
