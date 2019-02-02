@@ -1,13 +1,13 @@
-import  {ApolloClient} from 'apollo-client';
-import {createHttpLink} from 'apollo-link-http';
-import {setContext} from 'apollo-link-context'
-import {InMemoryCache} from 'apollo-cache-inmemory'
+import  {ApolloClient} from 'apollo-client'; // Cliente de Graphql de apollo
+import {createHttpLink} from 'apollo-link-http';// Trae el schema de graphql
+import {setContext} from 'apollo-link-context' //Setear cabezeras en el request
+import {InMemoryCache} from 'apollo-cache-inmemory' // Cache de graphql
 
 const API_URL = "https://cul-clone-netflix.herokuapp.com";
 
 const httplink =  createHttpLink({
     uri:`${API_URL}/graphql`,
-    credentials:"include"
+    credentials:"include"// solo se agrega  cuando hay credentials en el backend
 })
 
 const authLink =  setContext((_,{headers}) => {
